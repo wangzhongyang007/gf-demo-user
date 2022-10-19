@@ -28,7 +28,7 @@ type UserColumns struct {
 	UpdateAt string // Updated Time
 }
 
-//  userColumns holds the columns for table user.
+// userColumns holds the columns for table user.
 var userColumns = UserColumns{
 	Id:       "id",
 	Passport: "passport",

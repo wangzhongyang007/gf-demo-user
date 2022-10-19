@@ -16,6 +16,7 @@ type (
 	sUser struct{}
 )
 
+//在logic层的init()方法中调用进行了服务注册
 func init() {
 	service.RegisterUser(New())
 }
@@ -25,6 +26,7 @@ func New() *sUser {
 }
 
 // Create creates user account.
+//复杂的逻辑都是在logic层处理的，service层通过gf cli工具生成，统一规范！
 func (s *sUser) Create(ctx context.Context, in model.UserCreateInput) (err error) {
 	// If Nickname is not specified, it then uses Passport as its default Nickname.
 	if in.Nickname == "" {

@@ -26,9 +26,10 @@ var (
 					service.Middleware().Ctx,
 					ghttp.MiddlewareCORS,
 				)
-				// Register route handlers.
+				// Register route handlers. 注册路由
 				group.Bind(
 					controller.User,
+					controller.Goods,
 				)
 				// Special handler that needs authentication.
 				group.Group("/", func(group *ghttp.RouterGroup) {

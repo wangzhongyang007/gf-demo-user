@@ -13,7 +13,9 @@ var User = cUser{}
 
 type cUser struct{}
 
+//controller层类似于我自己项目的 xxx_api.go 文件
 func (c *cUser) SignUp(ctx context.Context, req *v1.UserSignUpReq) (res *v1.UserSignUpRes, err error) {
+	//和internal内部，和model层同级的有service层。
 	err = service.User().Create(ctx, model.UserCreateInput{
 		Passport: req.Passport,
 		Password: req.Password,
