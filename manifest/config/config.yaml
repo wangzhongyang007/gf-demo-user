@@ -19,6 +19,8 @@ database:
     stdout: true
 
   default:
-    link: "mysql:root:2BaDgEMGQj@tcp(127.0.0.1:3306)/test"
+    #    密码换成你自己的
+    link: "mysql:root:xxxxx@tcp(127.0.0.1:3306)/test"
+    #    link: "mysql:root:2BaDgEMGQj@tcp(127.0.0.1:3306)/test"
     debug: true
 

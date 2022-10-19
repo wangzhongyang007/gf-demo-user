@@ -4,16 +4,22 @@
 
 ### 1. You need a go development environment setup before everything starts taking off.
 
-### 2. Use `git clone` to clone the repo to your local folder. 
+### 2. Use `git clone` to clone the repo to your local folder.
+
 ```
-git clone https://github.com/gogf/gf-demo-user
+https://github.com/wangzhongyang007/gf-demo-user
 ```
 
-### 3. Import `manifest/sql/create.sql` to your database. 
+### 3. Import `manifest/sql/create.sql` to your database.
+
+Import `manifest/sql/goods.sql` to your database.
+
+注意：记得修改config.yaml中的数据库密码
 
 ### 4. Update `manifest/config/config.yaml` according to your local configurations if necessary.
 
 ### 5. Run command `go run main.go`, and you'll see something as follows if success:
+
 ```
   ADDRESS | METHOD |        ROUTE         |                                  HANDLER                                   |         MIDDLEWARE           
 ----------|--------|----------------------|----------------------------------------------------------------------------|------------------------------
@@ -47,8 +53,21 @@ git clone https://github.com/gogf/gf-demo-user
 ```
 
 # GoFrame Sites
+
 ### GoFrame Repo
+
 * [https://github.com/gogf/gf](https://github.com/gogf/gf)
 
 ### GoFrame Home
+
 * [https://goframe.org](https://goframe.org) (中文)
+
+# 联系我
+
+## 微信：wangzhongyang1993
+
+## 公众号：程序员升级打怪之旅
+
+## 我学习GoFrame的专栏：
+
+https://juejin.cn/column/7146133427706658847

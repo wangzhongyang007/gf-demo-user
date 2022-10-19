@@ -9,12 +9,13 @@ import (
 	"context"
 
 	"github.com/gogf/gf-demo-user/v2/internal/model"
+	"github.com/gogf/gf-demo-user/v2/internal/model/entity"
 )
 
 type (
 	IGoods interface {
 		AddGoods(ctx context.Context, in model.GoodsAddInput) (err error)
-		GoodsInfo(ctx context.Context, in model.GoodsInfoInput) (err error, out model.GoodsInfoOutput)
+		GoodsInfo(ctx context.Context, in model.GoodsInfoInput) (goods *entity.Goods)
 	}
 )
 

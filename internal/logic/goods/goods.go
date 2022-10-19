@@ -5,6 +5,7 @@ import (
 	"github.com/gogf/gf-demo-user/v2/internal/dao"
 	"github.com/gogf/gf-demo-user/v2/internal/model"
 	"github.com/gogf/gf-demo-user/v2/internal/model/do"
+	"github.com/gogf/gf-demo-user/v2/internal/model/entity"
 	"github.com/gogf/gf-demo-user/v2/internal/service"
 )
 
@@ -33,7 +34,11 @@ func (s *sGoods) AddGoods(ctx context.Context, in model.GoodsAddInput) (err erro
 }
 
 //查询商品
-func (s *sGoods) GoodsInfo(ctx context.Context, in model.GoodsInfoInput) (err error, out model.GoodsInfoOutput) {
-	err = dao.Goods.Ctx(ctx).WherePri(in.Id).Scan(out.Info)
+func (s *sGoods) GoodsInfo(ctx context.Context, in model.GoodsInfoInput) (goods *entity.Goods) {
+	//注意：scan中要传入的是指针类型，不能直接传值类型！！！
+	err := dao.Goods.Ctx(ctx).WherePri(in.Id).Scan(&goods)
+	if err != nil {
+		return nil
+	}
 	return
 }

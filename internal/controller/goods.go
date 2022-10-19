@@ -5,6 +5,7 @@ import (
 	v1 "github.com/gogf/gf-demo-user/v2/api/v1"
 	"github.com/gogf/gf-demo-user/v2/internal/model"
 	"github.com/gogf/gf-demo-user/v2/internal/service"
+	"github.com/gogf/gf/v2/frame/g"
 )
 
 var Goods = cGoods{}
@@ -23,14 +24,11 @@ func (c *cGoods) AddGoods(ctx context.Context, req *v1.GoodsAddReq) (res *v1.Goo
 
 //查询商品
 func (c *cGoods) GoodsInfo(ctx context.Context, req *v1.GoodsInfoReq) (res *v1.GoodsInfoRes, err error) {
-	//这么写比较麻烦 todo 优化
-	var goods = model.GoodsInfoOutput{}
-	err, goods = service.Goods().GoodsInfo(ctx, model.GoodsInfoInput{
-		Id: req.Id,
-	})
-	res.Goods = goods.Info
-	if err != nil {
-		return nil, err
+	res = &v1.GoodsInfoRes{
+		Goods: service.Goods().GoodsInfo(ctx, model.GoodsInfoInput{
+			Id: req.Id,
+		}),
 	}
+	g.Dump(res)
 	return
 }
